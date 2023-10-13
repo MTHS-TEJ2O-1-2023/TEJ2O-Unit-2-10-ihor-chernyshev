@@ -35,7 +35,7 @@ basic.forever(function () {
     neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
     neopixelStrip.show()
     basic.pause(500)
-    }
+  }
   if (ll > 104) {
     neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
     neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
