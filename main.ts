@@ -1,8 +1,45 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
+ * Created by: Ihor Chernyshev
+ * Created on: Oct 2023
  * This program ...
 */
 
-basic.showString('Hello, World!')
+let ll: number = 0
+let neopixelStrip: neopixel.Strip = null
+
+basic.clearScreen()
+neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.show()
+basic.showIcon(IconNames.Happy)
+
+basic.forever(function () {
+  ll = input.lightLevel()
+})
+if (ll <= 51){
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
+}
+if (ll > 52) {
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.show()
+}
+if (ll > 104) {
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.show()
+}
+if (ll > 156) {
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.show()
+}
+if (ll > 208) {
+  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
+  neopixelStrip.show()
+}
